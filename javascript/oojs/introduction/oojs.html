@@ -11,8 +11,12 @@
   </body>
 
     <script>
+      // Object literal
       const person = {
-        name: ['Bob', 'Smith'],
+        name: {
+          first: 'Bob',
+          last: 'Smith',
+        },
         age: 32,
         bio() {
           console.log(`${this.name[0]} ${this.name[1]} is ${this.age} years old.`);
@@ -21,5 +25,21 @@
           console.log(`Hi! I'm ${this.name[0]}.`);
         }
       };
+
+      // Retrieving object members
+      // Dot notation
+      console.log(person.name.first);
+      
+      // Bracket notation
+      console.log(person['name']['last']);
+
+      // Setting object members
+      person.age = 45;
+      person['name']['last'] = 'Selznick';
+
+      console.log(person.age);
+      console.log(person.name.last);
+
+      // 
     </script>
 </html>
