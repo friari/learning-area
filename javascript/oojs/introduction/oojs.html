@@ -48,5 +48,41 @@
 
       console.log(person.eyes);
       person.farewell();
+
+      const myDataName = 'height';
+      const myDataValue = '1.75m';
+      person[myDataName] = myDataValue;
+
+      // Object constructors
+      //  Defines shape of object and lets us create as many of those objects we like under diff names
+      
+      // without constructor - long winded version
+      function createPerson(name) {
+        const obj = {};
+        obj.name = name;
+        obj.introduceSelf = function() {
+          console.log(`Hi! I'm ${this.name}`);
+        }
+        return obj;
+      }
+
+      const salva = createPerson('Salva');
+      salva.introduceSelf();
+
+      // Constructors are functions called using 'new' keyword that
+      // - Creates new object
+      // - Binds 'this' to the new object
+      // - runs code in constructor
+      // - returns the object
+      // They start with a capitol letter eg below
+      function Person(name) {
+        this.name = name;
+        this.introduceSelf = function() {
+          console.log(`Hi! I'm ${this.name}`);
+        }
+      }
+
+      const jet = new Person('Jet');
+      jet.introduceSelf();
     </script>
 </html>
